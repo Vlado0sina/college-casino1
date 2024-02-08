@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.top-bar {
+  width: 100%;
+  height: 13.8%;
+  background: #724c9d;
+}
+.main-bar {
+  width: 100%;
+  height: 86.2%;
+  background: #2c1b47;
+}
