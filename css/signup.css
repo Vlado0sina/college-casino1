@@ -15,8 +15,29 @@
   align-items: center;
   width: 315px;
   height: 630px;
-  background-color: rgba(255, 255, 255, 0.24);
-  animation: slideRightToLeft 1.7s forwards;
+  /* background-color: rgba(44, 27, 71, 0.2); */
+  background-color: rgba(255, 255, 255, 0.3);
+  animation: slideRightToLeft 1.7s forwards, fadeIn 1.7s forwards;
+}
+@keyframes slideRightToLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .icons {
@@ -52,16 +73,62 @@
   transform: rotate(135deg);
 }
 
-@keyframes slideRightToLeft {
-  from {
-    transform: translateX(100%);
+.center-group {
+  /* width: 200px;
+  height: 200px; */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(50px, 1fr));
+  grid-template-rows: repeat(3, minmax(50px, 1fr));
+}
+.machine {
+  animation: machine 0.65s ease infinite;
+}
+
+@keyframes machine {
+  0% {
+    width: 50px;
+    height: 50px;
   }
-  to {
-    transform: translateX(0%);
+  100% {
+    width: 55px;
+    height: 55px;
   }
 }
 
-.center-group {
-  width: 200px;
-  height: 200px;
+.die {
+  animation: die 0.68s ease infinite;
+}
+
+@keyframes die {
+  0% {
+    width: 50px;
+    height: 50px;
+  }
+  100% {
+    width: 45px;
+    height: 45px;
+  }
+}
+.card {
+  animation: card 4s linear infinite;
+  transform-origin: center center;
+}
+@keyframes card {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.divThreeStage {
+  width: 315px;
+  height: 630px;
+  background-color: red;
+}
+.threeStage {
+  width: 100%;
+  height: 35px;
+  background-color: black;
 }
