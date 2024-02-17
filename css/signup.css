@@ -2,5 +2,66 @@
   display: none;
   position: absolute;
   width: 630px;
-  color: red;
+  height: 630px;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.slider-signup-left {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 315px;
+  height: 630px;
+  background-color: rgba(255, 255, 255, 0.24);
+  animation: slideRightToLeft 1.7s forwards;
+}
+
+.icons {
+  width: 50px;
+  height: 50px;
+}
+
+.slider-signup-left .card1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-45deg);
+}
+
+.slider-signup-left .card2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: rotate(45deg);
+}
+
+.slider-signup-left .card3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: rotate(-135deg);
+}
+
+.slider-signup-left .card4 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: rotate(135deg);
+}
+
+@keyframes slideRightToLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.center-group {
+  width: 200px;
+  height: 200px;
 }
