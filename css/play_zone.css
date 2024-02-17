@@ -138,6 +138,9 @@ body {
   width: 86.2%;
   height: inherit;
   background: #2c1b47;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .tabs {
@@ -151,16 +154,20 @@ body {
   text-decoration: underline;
 }
 .tabs-group {
-  margin: 0;
-  padding: 0;
+  width: 90%; /*временная ширина*/
   height: 36px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  box-sizing: border-box;
   border-bottom: 2px solid #ff0909;
 }
 
-.form {
+.form-general {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  row-gap: 10px;
   margin: 50px 0;
   text-align: center;
 }
@@ -180,7 +187,6 @@ body {
   border: 2px solid rgba(73, 42, 120, 0.1);
   background: #fff;
 
-  margin-bottom: 12px;
   text-align: center;
 }
 
@@ -191,7 +197,6 @@ body {
 }
 
 .test {
-  display: inline-block;
   border: 2px solid #ff0909;
 }
 
@@ -233,4 +238,34 @@ body {
   font-size: 16px;
   border-radius: 55px;
   margin: auto;
+}
+
+.form-security input[type="password"],
+.form-security input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.old-password {
+  position: relative;
+}
+.new-password {
+  position: relative;
+}
+.password-confirm {
+  position: relative;
+}
+.eye {
+  position: absolute;
+  top: 50%;
+  right: 4%;
+  cursor: pointer;
+  color: lightgray;
+}
+
+.form-general {
+  display: none;
+}
+.form-security {
+  display: none;
 }

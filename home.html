@@ -7,13 +7,94 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/signup.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title></title>
 </head>
 
 <body>
-    <div class="top-bar"></div>
-    <div class="main-bar"></div>
+    <div class="top-bar">
+        <section class="div-logo">
+            <img class="logo-img" src="play_zone_pic/casino-chip.png" alt="" width="64" height="64" loading="lazy">
+        </section>
+        <div class="buttons">
+            <button class="login">Login</button>
+            <button class="signup">Sign up</button>
+        </div>
+    </div>
+    <div class="main-bar">
+
+        <div class="slider">
+            <div class="slide-track">
+                <div class="slide">
+                    <img src="./home_pic/5dragons-slot.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="./home_pic/5dragons-slot.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="./home_pic/5dragons-slot.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="./home_pic/5dragons-slot.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="./home_pic/5dragons-slot.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="./home_pic/5dragons-slot.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="./home_pic/5dragons-slot.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="./home_pic/5dragons-slot.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="./home_pic/5dragons-slot.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="./home_pic/5dragons-slot.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <form action="">
+                <h1>Login</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+
+                <div class="forgot">
+                    <a href="">Forgot password</a>
+                </div>
+
+                <button type="submit" class="btn">Login</button>
+                <div class="register-link">
+                    <p>Don't have an account? <a href="">Register</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="wrapper-signup">
+            <div class="slider-signup-left"></div>
+            <div class="threeStage"></div>
+            <form action="" class="signup">
+
+            </form>
+        </div>
+    </div>
+    <script src='./js/home.js'>
+
+    </script>
+
 </body>
 
 </html>

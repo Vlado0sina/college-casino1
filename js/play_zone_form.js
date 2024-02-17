@@ -1,14 +1,65 @@
-let day = document.getElementsByClassName("day");
-let mounth = document.getElementsByClassName("mounth");
-let year = document.getElementsByClassName("year");
+let dayInput = document.getElementsByClassName("day")[0];
+let monthInput = document.getElementsByClassName("month")[0];
+let yearInput = document.getElementsByClassName("year")[0];
+let ageError = document.getElementById("ageError");
 let codeNumber = document.getElementsByClassName("code");
 let phoneNumber = document.getElementsByClassName("number");
 let Name = document.getElementsByClassName("name");
 let surname = document.getElementsByClassName("surname");
 let email = document.getElementsByClassName("email").value;
+let emailError = document.getElementById("emailError");
 let select = document.getElementsByClassName("gender");
 let textInput = document.getElementsByClassName("textInput");
 
+let profile = document.getElementsByClassName("profile")[0];
+
+let general = document.getElementsByClassName("general-tab")[0];
+let security = document.getElementsByClassName("security-tab")[0];
+
+let formSecurity = document.getElementsByClassName("form-security")[0];
+let formGeneral = document.getElementsByClassName("form-general")[0];
+
+let showPassword = document.getElementsByClassName("eye");
+let input = document.getElementsByClassName("inputPassword");
+
+//do password visible and vise versa
+for (let i = 0; i < showPassword.length; i++) {
+  showPassword[i].addEventListener("click", function () {
+    if (input[i].type === "password") {
+      input[i].type = "text";
+      showPassword[i].src = "../play_zone_pic/eye-solid.svg";
+    } else {
+      input[i].type = "password";
+      showPassword[i].src = "../play_zone_pic/eye-slash-solid.svg";
+    }
+  });
+}
+
+//do content visible when you click to profile -> by default GENERAL and vise versa
+profile.addEventListener("click", function () {
+  formGeneral.style.display = "block";
+  formSecurity.style.display = "none";
+});
+
+general.addEventListener("click", function () {
+  formSecurity.style.display = "none";
+  formGeneral.style.display = "block";
+});
+
+security.addEventListener("click", function () {
+  formGeneral.style.display = "none";
+  formSecurity.style.display = "block";
+});
+
+/*
+Санитизация данных
+Экранирование символов(SQL-экранирование HTML-экранирование URL-экранирование)
+85 city
+53 name
+48 surname
+*/
+
+//change to input field for gender
 for (let i = 0; i < select.length; i++) {
   select[i].addEventListener("change", function () {
     if (select[i].value === "Other") {
@@ -20,36 +71,68 @@ for (let i = 0; i < select.length; i++) {
   });
 }
 
-const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-function validEmail(email) {
-  return emailRegex.test(email);
-}
-//i need to add valiadion about AGE
 //i need to add valiadion about EMAIL
 //i need to add valiadion about PHONE NUMBER
 //i need to add valiadion about POSTAL CODE
 
+dayInput.addEventListener("input", validateAge);
+monthInput.addEventListener("input", validateAge);
+yearInput.addEventListener("input", validateAge);
+
+function validateAge() {
+  const day = parseInt(dayInput.value);
+  const month = parseInt(monthInput.value);
+  const year = parseInt(yearInput.value);
+
+  // Checking that all three fields are filled in
+  if (isNaN(day) || isNaN(month) || isNaN(year)) {
+    ageError.textContent = "Please fill in all date of birth fields";
+    return;
+  }
+
+  // Getting the current date
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = currentDate.getMonth() + 1;
+  const currentDay = currentDate.getDate();
+
+  // Calculate age based on entered date of birth
+  const age =
+    currentYear -
+    year -
+    (currentMonth < month || (currentMonth === month && currentDay < day)
+      ? 1
+      : 0);
+
+  // Checking that age is greater than or equal to 18
+  if (age < 18) {
+    ageError.textContent = "You must be over 18 years old";
+  } else {
+    ageError.textContent = "";
+  }
+}
+
 //day and mounth, year and mobile phone code with number
 for (
   let i = 0;
-  i < day.length &&
-  mounth.length &&
-  year.length &&
+  i < dayInput.length &&
+  monthInput.length &&
+  yearInput.length &&
   codeNumber.length &&
   phoneNumber.length;
   i++
 ) {
-  day[i].addEventListener("input", function () {
+  dayInput[i].addEventListener("input", function () {
     if (this.value.length > 2) {
       this.value = this.value.slice(0, 2);
     }
   });
-  mounth[i].addEventListener("input", function () {
+  monthInput[i].addEventListener("input", function () {
     if (this.value.length > 2) {
       this.value = this.value.slice(0, 2);
     }
   });
-  year[i].addEventListener("input", function () {
+  yearInput[i].addEventListener("input", function () {
     if (this.value.length > 4) {
       this.value = this.value.slice(0, 4);
     }
