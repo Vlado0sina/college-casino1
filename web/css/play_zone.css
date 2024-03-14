@@ -281,47 +281,60 @@ body {
 }
 
 .main-wallet-container {
-  position: relative;
+  display: none;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  display: none;
   width: 738px;
-  height: calc(250px + 84px);
+  height: calc(250px + 194px);
   border: 1px solid white;
 }
 .wallet-container {
-  position: relative;
   width: 515px;
   height: 250px;
-  background-color: white;
+  background-color: whitesmoke;
   border-radius: 10px;
-  /* margin: auto auto; */
+  align-self: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .banks-cards-container {
-  position: absolute;
   display: flex;
   gap: 10px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
 }
 
 .bankCard {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   width: 145px;
   height: 80px;
-  background-color: black;
+  background-color: lightslategrey;
   border-radius: 10px;
+  padding: 5px;
 }
-
-.imgBankCards {
-  margin: 10px auto;
-}
-
+/* .imgBankCards {
+  width: 100px;
+  height: 25px;
+} */
 .underImgBankCardText {
-  display: flex;
+  margin: 0;
   color: white;
-  justify-content: center;
+}
+
+.deposit-btn {
+  width: 400px;
+  height: 60px;
+  border: none;
+  color: white;
+  background-color: lightslategrey;
+  border-radius: 50px;
+  margin-bottom: 10px;
 }
 
 .select-amount {
@@ -330,6 +343,7 @@ body {
   height: 42px;
   border-radius: 50px;
   background-color: white;
+  margin-bottom: 10px;
 }
 .select-amount-number {
   display: flex;
@@ -345,4 +359,119 @@ body {
   border-radius: 50px;
   border: 2px solid white;
   background-color: transparent;
+  margin-bottom: 10px;
 }
+
+/* .wrapper {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background-color: #ffffff;
+  width: 500px;
+  padding: 3em;
+  border-radius: 1em;
+  perspective: 800px;
+}
+.credit-card {
+  position: relative;
+  width: 350px;
+  height: 220px;
+  margin: auto;
+  transform-style: preserve-3d;
+  transition: 0.3s;
+}
+.card-front,
+.card-back {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background: linear-gradient(#33a4f8, #206df9);
+  border-radius: 1em;
+  backface-visibility: hidden;
+}
+.card-front {
+  padding: 2em 1em;
+}
+.branding {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.branding img {
+  width: 50px;
+  height: auto;
+}
+.card-back {
+  position: absolute;
+  transform: rotateY(180deg);
+}
+.card-number {
+  color: #ffffff;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8em;
+  margin-top: 3em;
+}
+.details {
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5em;
+  font-size: 0.8em;
+}
+.details span {
+  display: block;
+}
+.details #card-holder-name {
+  text-transform: uppercase;
+}
+.card-back .black-strip {
+  position: relative;
+  background-color: #000000;
+  height: 50px;
+  top: 2em;
+}
+.card-back .white-strip {
+  top: 3em;
+  position: relative;
+  text-align: right;
+}
+.card-back .white-strip span {
+  margin-right: 1em;
+}
+.card-back .white-strip div {
+  height: 30px;
+  background-color: #ffffff;
+  margin-top: 0.5em;
+}
+.card-back .visa-logo {
+  position: absolute;
+  width: 50px;
+  margin-top: 4em;
+  right: 1em;
+}
+.credit-card-form {
+  margin-top: 2em;
+}
+.labelInput {
+  display: block;
+}
+.clabel {
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+.cinput {
+  width: 100%;
+  border: 1px solid #000000;
+  padding: 1em 0.5em;
+  border-radius: 0.5em;
+}
+.cinput:not(:last-child) {
+  margin-bottom: 1em;
+}
+.credit-card-form .date-cvv {
+  display: flex;
+  justify-content: space-between;
+} */
