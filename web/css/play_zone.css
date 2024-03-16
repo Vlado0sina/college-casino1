@@ -362,7 +362,8 @@ body {
   margin-bottom: 10px;
 }
 
-/* .wrapper {
+.wrapper {
+  display: none;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -383,6 +384,7 @@ body {
 }
 .card-front,
 .card-back {
+  box-sizing: border-box;
   position: absolute;
   width: inherit;
   height: inherit;
@@ -474,4 +476,4 @@ body {
 .credit-card-form .date-cvv {
   display: flex;
   justify-content: space-between;
-} */
+}

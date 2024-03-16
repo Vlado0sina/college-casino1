@@ -4,7 +4,10 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require_once("userhash.class.php");
-require_once "db.class.php";
+require_once("db.class.php");
+
+
+
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -59,6 +62,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
 
             // header('Location: play_zone.html');
+            // $user_id = $db->insert_id;
+            // $user_data = $db->getUserById($user_id);
+            // var_dump($user_data);
             exit;
         } else {
             echo "Failed to connect to database!";
